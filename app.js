@@ -12,6 +12,12 @@ app.get('/home', (req, res) =>{
    res.send('Hello, World!');
 });
 
+//router handler that contains a path parameter
+app.post('/user/:id', (req, res) =>{
+    const user_id = req.params.id;
+    res.send(`The user id is: ${user_id}`);
+});
+
 //start our server
 app.listen(PORT, () =>{
     console.log(`Server started on port: ${PORT}`);
