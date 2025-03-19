@@ -18,6 +18,12 @@ app.post('/user/:id', (req, res) =>{
     res.send(`The user id is: ${user_id}`);
 });
 
+//router handler for query parameters
+app.get('/search', (req, res)=>{
+    const query = req.query.q;
+    res.send(`This is the search term entered: ${query}`);
+});
+
 //start our server
 app.listen(PORT, () =>{
     console.log(`Server started on port: ${PORT}`);
